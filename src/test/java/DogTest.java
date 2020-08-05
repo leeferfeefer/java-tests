@@ -16,6 +16,10 @@ import static org.mockito.Mockito.when;
 
 // I am testing the Dog class - Therefore, these are unit tests
 // I am only concerned with implementation details of Dog ONLY
+
+// Mocks are done for unit tests
+// Spys are usually done for integration and end to end tests
+
 public class DogTest {
 
     @Spy
@@ -35,14 +39,14 @@ public class DogTest {
     @Test
     public void testBark() {
         assertNotNull(dog);
-        Assert.assertEquals("BARK", dog.bark());
+        assertEquals("BARK", dog.bark());
     }
 
     // get legs method needs to return 4
     @Test
     public void testLegs() {
         assertNotNull(dog);
-        Assert.assertEquals(4, dog.getLegs());
+        assertEquals(4, dog.getLegs());
     }
 
     // Mocks vs Spys
@@ -54,6 +58,6 @@ public class DogTest {
 
         Mockito.verify(animalNamerSpy).getName(dog);
 
-        Assert.assertEquals("George Rover Dog", dogName);
+        assertEquals("George Rover Dog", dogName);
     }
 }
